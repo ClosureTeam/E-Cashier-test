@@ -17,7 +17,7 @@ public class Cashier{
         do{
 	        do{
 	            validasi="Y";
-	 			System.out.println("*** My Resto ***");
+	 			System.out.println("*** My Resto Ku***");
 	 			System.out.println("1. Menu");
 	 			System.out.println("2. Payment");
 	 			System.out.println("3. Exit");
