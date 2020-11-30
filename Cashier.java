@@ -9,7 +9,7 @@ public class Cashier{
 
         int menu_choice = 0
         int nasiAyam = 0, nasi = 0, perkedel = 0; //sebagai flag
-        int qty_nasiAyam = 0, qty_nasiAyam = 0, qty_perkedel = 0; //sebagai counter jumlah item
+        int qty_nasiAyam = 0, qty_nasi = 0, qty_perkedel = 0; //sebagai counter jumlah item
         int subtotal = 0; //sebagai subtotal
         int payment = 0; //sebagai pembayaran dari user
         int change = 0; //sebagai kembalian
@@ -69,7 +69,7 @@ public class Cashier{
 				        			qty_nasiAyam = in.nextInt();
 
 					        		if (qty_nasiAyam < 1 || qty_nasiAyam > 10) {
-					        			validasi = "N"
+					        			validasi = "N";
 					        		}
 					        	}catch(Exception e)
 					        	{
@@ -93,7 +93,7 @@ public class Cashier{
 				        			qty_nasi = in.nextInt();
 
 					        		if (qty_nasi < 1 || qty_nasi > 10) {
-					        			validasi = "N"
+					        			validasi = "N";
 					        		}
 					        	}catch(Exception e)
 					        	{
@@ -117,7 +117,7 @@ public class Cashier{
 				        			qty_perkedel = in.nextInt();
 
 					        		if (qty_perkedel < 1 || qty_perkedel > 10) {
-					        			validasi = "N"
+					        			validasi = "N";
 					        		}
 					        	}catch(Exception e)
 					        	{
