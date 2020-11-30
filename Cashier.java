@@ -14,6 +14,7 @@ public class Cashier{
         int payment = 0; //sebagai pembayaran dari user
         int change = 0; //sebagai kembalian
 		
+		
         
         do{
 	        do{
