@@ -7,7 +7,7 @@ public class Cashier{
         String validasi = "";
         int choice = 0;
 
-        int menu_choice = 0
+        int menu_choice = 0;
         int nasiAyam = 0, nasi = 0, perkedel = 0; //sebagai flag
         int qty_nasiAyam = 0, qty_nasi = 0, qty_perkedel = 0; //sebagai counter jumlah item
         int subtotal = 0; //sebagai subtotal
@@ -43,10 +43,11 @@ public class Cashier{
 	        	case 1 : // menu
 	        		do{
 	        			validasi = "Y";
-			        	System.out.println("# MENU ");
+			        	System.out.println("\n# MENU ");
 			        	System.out.println("1. Nasi Ayam");
 			        	System.out.println("2. Nasi");
 			        	System.out.println("3. Perkedel");
+			        	System.out.print(">> Choice :");
 			        	try{
 			        		menu_choice = in.nextInt();
 			        		if(menu_choice < 1 || menu_choice > 3){
@@ -76,11 +77,11 @@ public class Cashier{
 					        		validasi = "N";
 					        		in.nextLine();
 					        	}
-					        	if (validasi = "N") {
+					        	if (validasi == "N") {
 					        		System.out.println("   >> Wrong Input");
 					        	}
 				        	}while(validasi == "N");
-				        	System.out.println("== You've ordered "+ qty_nasiAyam+ " Nasi Ayam == ");
+				        	System.out.println("\n== You've ordered "+ qty_nasiAyam+ " Nasi Ayam == ");
 				        	System.out.println("== Please go to Payment menu to payy the bill ==");
 				        	break;
 
@@ -100,11 +101,11 @@ public class Cashier{
 					        		validasi = "N";
 					        		in.nextLine();
 					        	}
-					        	if (validasi = "N") {
+					        	if (validasi == "N") {
 					        		System.out.println("   >> Wrong Input");
 					        	}
 				        	}while(validasi == "N");
-				        	System.out.println("== You've ordered "+ qty_nasi+ " Nasi == ");
+				        	System.out.println("\n== You've ordered "+ qty_nasi+ " Nasi == ");
 				        	System.out.println("== Please go to Payment menu to payy the bill ==");
 				        	break;
 
@@ -124,11 +125,11 @@ public class Cashier{
 					        		validasi = "N";
 					        		in.nextLine();
 					        	}
-					        	if (validasi = "N") {
+					        	if (validasi == "N") {
 					        		System.out.println("   >> Wrong Input");
 					        	}
 				        	}while(validasi == "N");
-				        	System.out.println("== You've ordered "+ qty_perkedel+ " Perkedel ==");
+				        	System.out.println("\n== You've ordered "+ qty_perkedel+ " Perkedel ==");
 				        	System.out.println("== Please go to Payment menu to payy the bill ==");
 				        	break;
 
@@ -137,11 +138,11 @@ public class Cashier{
 
 			        }
 		        case 2 : // payment
-		        	System.out.println("# PAYMENT ");
+		        	System.out.println("\n# PAYMENT ");
 
 		        	if (nasiAyam == 0 && nasi == 0 && perkedel == 0) {
 		        		System.out.println("== You didn't order anything yet ==");
-		        		System.out.println("== Please go to Menu to Order");
+		        		System.out.println("== Please go to Menu to Order\n");
 		        		break;
 		        	}
 		        	int total_nasiAyam = 0, total_nasi = 0, total_perkedel = 0;
@@ -158,14 +159,14 @@ public class Cashier{
 		        	subtotal = total_nasiAyam + total_nasi + total_perkedel;
 
 		        	System.out.println("== Your orders are : ==");
-		        	System.out.println(qty_nasiAyam + " Nasi Ayam \t : Rp. " + total_nasiAyam);
-		        	System.out.println(qty_nasi + " Nasii \t : Rp. " + total_nasi);
-		        	System.out.println(qty_perkedel + " Perkedel \t : Rp. " + total_perkedel);
-		        	System.out.println("== Subtotal : Rp." + subtotal + " ==");
+		        	System.out.println(qty_nasiAyam + " Nasi Ayam \t : Rp." + total_nasiAyam);
+		        	System.out.println(qty_nasi + " Nasii \t : Rp." + total_nasi);
+		        	System.out.println(qty_perkedel + " Perkedel \t : Rp." + total_perkedel);
+		        	System.out.println("== Subtotal \t : Rp." + subtotal + " ==");
 
 		        	do{
 		        		validasi = "Y";
-		        		System.out.print("\n\n\nYour Payment : Rp. ");
+		        		System.out.print("\nYour Payment \t : Rp.");
 		        		try{
 		        			payment = in.nextInt();
 		        			if (payment < subtotal) {
@@ -181,14 +182,14 @@ public class Cashier{
 		        	}while(validasi == "N");
 
 		        	if (payment == subtotal) {
-		        		System.out.println("==  Payment Success!  ==");
+		        		System.out.println("\n==  Payment Success!  ==");
 		        		System.out.println("==  Thanks For coming ==");
 		        	}
 		        	else if (payment > subtotal) {
 		        		change = payment - subtotal;
-		        		System.out.println("==  Your change : Rp." + change+ "  ==");
+		        		System.out.println("\n==  Your change  : Rp." + change+ "  ==");
 		        		System.out.println("==  Payment Success!  ==");
-		        		System.out.println("==  Thanks For coming ==");
+		        		System.out.println("==  Thanks For coming ==\n");
 		        	}
 		        	//reseting fields
 		        	nasiAyam = 1;
@@ -200,6 +201,6 @@ public class Cashier{
 		        	System.exit(0);
 		        	break;
 	        }
-	    }while(true)
+	    }while(true);
     }
 }
