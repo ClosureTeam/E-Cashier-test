@@ -13,6 +13,7 @@ public class Cashier{
         int subtotal = 0; //sebagai subtotal
         int payment = 0; //sebagai pembayaran dari user
         int change = 0; //sebagai kembalian
+		
         
         do{
 	        do{
