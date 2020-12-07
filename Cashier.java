@@ -13,13 +13,8 @@ public class Cashier{
         int subtotal = 0; //sebagai subtotal
         int payment = 0; //sebagai pembayaran dari user
         int change = 0; //sebagai kembalian
-<<<<<<< HEAD
+
         ArrayList<String> list_pilihan = new ArrayList<String>();
-=======
-		
-		
-        
->>>>>>> 9427f04173499831f8f898e1c57a5a2c51d17d23
         do{
 	        do{
 	            validasi="Y";
@@ -87,11 +82,8 @@ public class Cashier{
 					        		System.out.println("   >> Wrong Input");
 					        	}
 				        	}while(validasi == "N");
-<<<<<<< HEAD
-				        	list_pilihan.add(qty_nasiAyam + " Nasi Ayam \t : Rp." + qty_nasiAyam*13000);
 
-=======
->>>>>>> 9427f04173499831f8f898e1c57a5a2c51d17d23
+				        	list_pilihan.add(qty_nasiAyam + " Nasi Ayam \t : Rp." + qty_nasiAyam*13000);
 				        	System.out.println("\n== You've ordered "+ qty_nasiAyam+ " Nasi Ayam == ");
 				        	System.out.println("== Please go to Payment menu to payy the bill ==");
 				        	break;
@@ -116,11 +108,9 @@ public class Cashier{
 					        		System.out.println("   >> Wrong Input");
 					        	}
 				        	}while(validasi == "N");
-<<<<<<< HEAD
+
 				        	list_pilihan.add(qty_nasi + " Nasi \t : Rp." + qty_nasi*4000);
 
-=======
->>>>>>> 9427f04173499831f8f898e1c57a5a2c51d17d23
 				        	System.out.println("\n== You've ordered "+ qty_nasi+ " Nasi == ");
 				        	System.out.println("== Please go to Payment menu to payy the bill ==");
 				        	break;
@@ -145,10 +135,8 @@ public class Cashier{
 					        		System.out.println("   >> Wrong Input");
 					        	}
 				        	}while(validasi == "N");
-<<<<<<< HEAD
+
 				        	list_pilihan.add(qty_perkedel + " Perkedel \t : Rp." + qty_perkedel*3000);
-=======
->>>>>>> 9427f04173499831f8f898e1c57a5a2c51d17d23
 				        	System.out.println("\n== You've ordered "+ qty_perkedel+ " Perkedel ==");
 				        	System.out.println("== Please go to Payment menu to payy the bill ==");
 				        	break;
@@ -179,7 +167,6 @@ public class Cashier{
 		        	subtotal = total_nasiAyam + total_nasi + total_perkedel;
 
 		        	System.out.println("== Your orders are : ==");
-<<<<<<< HEAD
 		        	for (String i : list_pilihan) {
                          System.out.println(i);
                     }
@@ -188,12 +175,11 @@ public class Cashier{
 		        	// System.out.println(qty_nasi + " Nasii \t : Rp." + total_nasi);
 		        	// System.out.println(qty_perkedel + " Perkedel \t : Rp." + total_perkedel);
 		        	// System.out.println("== Subtotal \t : Rp." + subtotal + " ==");
-=======
+
 		        	System.out.println(qty_nasiAyam + " Nasi Ayam \t : Rp." + total_nasiAyam);
 		        	System.out.println(qty_nasi + " Nasii \t : Rp." + total_nasi);
 		        	System.out.println(qty_perkedel + " Perkedel \t : Rp." + total_perkedel);
 		        	System.out.println("== Subtotal \t : Rp." + subtotal + " ==");
->>>>>>> 9427f04173499831f8f898e1c57a5a2c51d17d23
 
 		        	do{
 		        		validasi = "Y";
