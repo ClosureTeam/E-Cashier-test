@@ -1,28 +1,32 @@
+
 import java.util.*;
 
 public class Cashier{
+	static Scanner in = new Scanner(System.in);
+
+	static String validasi = "";
+	static int menu_choice = 0;
     public static void main(String[] args){
-        Scanner in = new Scanner(System.in);
-
-        String validasi = "";
+        
         int choice = 0;
-
-        int menu_choice = 0;
-        int nasiAyam = 0, nasi = 0, perkedel = 0; //sebagai flag
         int qty_nasiAyam = 0, qty_nasi = 0, qty_perkedel = 0; //sebagai counter jumlah item
         int subtotal = 0; //sebagai subtotal
         int payment = 0; //sebagai pembayaran dari user
         int change = 0; //sebagai kembalian
-
         ArrayList<String> list_pilihan = new ArrayList<String>();
+        String pesan_lagi ="";
+        int qty_1 = 0;
+        int qty_2 = 0;
+        int qty_3 = 0;
+
         do{
 	        do{
 	            validasi="Y";
-	 			System.out.println("*** My Resto ***");
+	 			System.out.println("*** Nasi Padang ***");
 	 			System.out.println("1. Menu");
-	 			System.out.println("2. Payment");
-	 			System.out.println("3. Exit");
-	 			System.out.print(">> Choice :");
+	 			System.out.println("2. Pembayaran");
+	 			System.out.println("3. Keluar");
+	 			System.out.print(">> Pilih :");
 	 			try{
 	 				choice = in.nextInt();
 	 				if(choice < 1 || choice > 3){
@@ -35,41 +39,31 @@ public class Cashier{
 	 				in.nextLine();
 	 			}
 	 			if (validasi == "N") {
-	 				System.out.println("    >> Wrong Input \n");
+	 				System.out.println("    >> Inputan salah \n");
 	 			}
 	        }while(validasi == "N");
 
 	        switch(choice)
 	        {
 	        	case 1 : // menu
-	        		do{
-	        			validasi = "Y";
-			        	System.out.println("\n# MENU ");
-			        	System.out.println("1. Nasi Ayam");
-			        	System.out.println("2. Nasi");
-			        	System.out.println("3. Perkedel");
-			        	System.out.print(">> Choice :");
-			        	try{
-			        		menu_choice = in.nextInt();
-			        		if(menu_choice < 1 || menu_choice > 3){
-	 							validasi = "N";
-	 						}
-			        	}
-			        	catch(Exception e){
-			        		validasi = "N";
-			        		in.nextLine();
-			        	}
-			        }while(validasi == "N");
-
+	        	pilih_menu();
+                    do{
 			        switch(menu_choice){
 			        	case 1 : //nasi ayam
-				        	nasiAyam = 1;
 				        	do{
 				        		validasi = "Y";
 				        		System.out.print(">> Jumlah [1-10] : ");
 				        		try{
 				        			qty_nasiAyam = in.nextInt();
+				        		    
+				        				System.out.print("Apakah mau pesan lagi? [y/n] ");
+				        	            pesan_lagi = in.next();
+				        	            if(pesan_lagi.equalsIgnoreCase("y")){
+				        		           pilih_menu();
 
+
+				        	            }
+                                    qty_1 += qty_nasiAyam;
 					        		if (qty_nasiAyam < 1 || qty_nasiAyam > 10) {
 					        			validasi = "N";
 					        		}
@@ -79,23 +73,24 @@ public class Cashier{
 					        		in.nextLine();
 					        	}
 					        	if (validasi == "N") {
-					        		System.out.println("   >> Wrong Input");
+					        		System.out.println("   >> Inputan salah");
 					        	}
 				        	}while(validasi == "N");
-
-				        	list_pilihan.add(qty_nasiAyam + " Nasi Ayam \t : Rp." + qty_nasiAyam*13000);
-				        	System.out.println("\n== You've ordered "+ qty_nasiAyam+ " Nasi Ayam == ");
-				        	System.out.println("== Please go to Payment menu to payy the bill ==");
 				        	break;
 
-				        case 2 :
-				        	nasi = 1;
+				        case 2 ://nasi
 				        	do{
 				        		validasi = "Y";
 				        		System.out.print(">> Jumlah [1-10] : ");
 				        		try{
 				        			qty_nasi = in.nextInt();
+				        			System.out.println("Apakah mau pesan lagi?");
+				        	            pesan_lagi = in.next();
+				        	            if(pesan_lagi.equalsIgnoreCase("y")){
+				        		           pilih_menu();
+				        	            }
 
+                                    qty_2 += qty_nasi;
 					        		if (qty_nasi < 1 || qty_nasi > 10) {
 					        			validasi = "N";
 					        		}
@@ -105,24 +100,25 @@ public class Cashier{
 					        		in.nextLine();
 					        	}
 					        	if (validasi == "N") {
-					        		System.out.println("   >> Wrong Input");
+					        		System.out.println("   >> Inputan salah");
 					        	}
 				        	}while(validasi == "N");
-
-				        	list_pilihan.add(qty_nasi + " Nasi \t : Rp." + qty_nasi*4000);
-
-				        	System.out.println("\n== You've ordered "+ qty_nasi+ " Nasi == ");
-				        	System.out.println("== Please go to Payment menu to payy the bill ==");
+				        	
 				        	break;
 
-				        case 3 : // nasi
-				        	perkedel = 1;
+				        case 3 : // perkedel
 				        	do{
 				        		validasi = "Y";
 				        		System.out.print(">> Jumlah [1-10] : ");
 				        		try{
 				        			qty_perkedel = in.nextInt();
+				        			System.out.println("Apakah mau pesan lagi?");
+				        	            pesan_lagi = in.next();
+				        	            if(pesan_lagi.equalsIgnoreCase("y")){
+				        		           pilih_menu();
+				        	            }
 
+                                    qty_3 += qty_perkedel;
 					        		if (qty_perkedel < 1 || qty_perkedel > 10) {
 					        			validasi = "N";
 					        		}
@@ -132,86 +128,75 @@ public class Cashier{
 					        		in.nextLine();
 					        	}
 					        	if (validasi == "N") {
-					        		System.out.println("   >> Wrong Input");
+					        		System.out.println("   >> Inputan salah");
 					        	}
 				        	}while(validasi == "N");
-
-				        	list_pilihan.add(qty_perkedel + " Perkedel \t : Rp." + qty_perkedel*3000);
-				        	System.out.println("\n== You've ordered "+ qty_perkedel+ " Perkedel ==");
-				        	System.out.println("== Please go to Payment menu to payy the bill ==");
 				        	break;
 
 				        case 4: // break
 				        	break;
 
 			        }
+			    }while(pesan_lagi.equalsIgnoreCase("y"));
 		        case 2 : // payment
-		        	System.out.println("\n# PAYMENT ");
+		        	System.out.println("\n# PEMBAYARAN ");
 
-		        	if (nasiAyam == 0 && nasi == 0 && perkedel == 0) {
-		        		System.out.println("== You didn't order anything yet ==");
-		        		System.out.println("== Please go to Menu to Order\n");
+		        	if (qty_1 < 1 && qty_2 < 1 && qty_3 < 1) {
+		        		System.out.println("== Tidak ada makanan yang dipesan ==");
+		        		System.out.println("== Silahkan pergi ke menu untuk memesan makanan\n");
 		        		break;
 		        	}
-		        	int total_nasiAyam = 0, total_nasi = 0, total_perkedel = 0;
 
-		        	if (nasiAyam == 1) {
-		        		total_nasiAyam = 13000 * qty_nasiAyam;
-		        	}
-		        	if (nasi == 1) {
-		        		total_nasi = 4000 * qty_nasi;
-		        	}
-		        	if (perkedel == 1 ) {
-		        		total_perkedel = 3000 * qty_perkedel;
-		        	}
-		        	subtotal = total_nasiAyam + total_nasi + total_perkedel;
+		        	System.out.println("== Pesanan anda : ==");
+		        	if(qty_1 > 0){
+				        list_pilihan.add(qty_1 + " Nasi Ayam \t : Rp." + qty_1*13000);
+				        subtotal+= qty_1*13000;
 
-		        	System.out.println("== Your orders are : ==");
+		        	}
+		        	if(qty_2> 0){
+				        list_pilihan.add(qty_2 + " Nasi \t : Rp." + qty_2*4000);
+				        subtotal+= qty_2*4000;
+
+
+		        	}
+		        	if(qty_3 > 0){
+				        list_pilihan.add(qty_3 + " Nasi Ayam \t : Rp." + qty_3*3000);
+				        subtotal+= qty_3*3000;
+
+
+		        	}
+
 		        	for (String i : list_pilihan) {
                          System.out.println(i);
                     }
 
-		        	// System.out.println(qty_nasiAyam + " Nasi Ayam \t : Rp." + total_nasiAyam);
-		        	// System.out.println(qty_nasi + " Nasii \t : Rp." + total_nasi);
-		        	// System.out.println(qty_perkedel + " Perkedel \t : Rp." + total_perkedel);
-		        	// System.out.println("== Subtotal \t : Rp." + subtotal + " ==");
-
-		        	System.out.println(qty_nasiAyam + " Nasi Ayam \t : Rp." + total_nasiAyam);
-		        	System.out.println(qty_nasi + " Nasii \t : Rp." + total_nasi);
-		        	System.out.println(qty_perkedel + " Perkedel \t : Rp." + total_perkedel);
-		        	System.out.println("== Subtotal \t : Rp." + subtotal + " ==");
-
 		        	do{
 		        		validasi = "Y";
-		        		System.out.print("\nYour Payment \t : Rp.");
+		        		System.out.print("\nPembayaran anda \t : Rp.");
 		        		try{
 		        			payment = in.nextInt();
 		        			if (payment < subtotal) {
 		        				validasi = "N";
-		        				System.out.println("   >> Not Enough");
+		        				System.out.println("   >> Uang tidak cukup");
 		        			}
 		        		}
 		        		catch(Exception e){
 		        			validasi = "N";
-		        			System.out.println("   >> Wrong Input");
+		        			System.out.println("   >> Inputan salah");
 		        			in.nextLine();
 		        		}
 		        	}while(validasi == "N");
 
 		        	if (payment == subtotal) {
-		        		System.out.println("\n==  Payment Success!  ==");
-		        		System.out.println("==  Thanks For coming ==");
+		        		System.out.println("\n==  Pembayaran sukses!  ==");
+		        		System.out.println("==  Terima kasih sudah membeli ==");
 		        	}
 		        	else if (payment > subtotal) {
 		        		change = payment - subtotal;
-		        		System.out.println("\n==  Your change  : Rp." + change+ "  ==");
-		        		System.out.println("==  Payment Success!  ==");
-		        		System.out.println("==  Thanks For coming ==\n");
+		        		System.out.println("\n==  kembalian anda  : Rp." + change+ "  ==");
+		        		System.out.println("==  Pembayaran sukses!  ==");
+		        		System.out.println("==  Terima kasih sudah membeli ==\n");
 		        	}
-		        	//reseting fields
-		        	nasiAyam = 1;
-		        	nasi = 1;
-		        	perkedel = 1;
 
 		        	break;
 		        case 3 : // Exit
@@ -219,6 +204,27 @@ public class Cashier{
 		        	break;
 	        }
 	    }while(true);
+    }
+    public static void pilih_menu(){
+    	do{
+	        validasi = "Y";
+			System.out.println("\n# MENU ");
+			System.out.println("1. Nasi Ayam");
+			System.out.println("2. Nasi");
+			System.out.println("3. Perkedel");
+			System.out.print(">> Pilih :");
+			    try{
+			        menu_choice = in.nextInt();
+			        if(menu_choice < 1 || menu_choice > 3){
+	 					validasi = "N";
+	 				}
+			    }
+			    catch(Exception e){
+			        validasi = "N";
+			        in.nextLine();
+			        }
+		}while(validasi == "N");
+
     }
 
 }
