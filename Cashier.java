@@ -53,43 +53,43 @@ public class Cashier{
 
                     do{
 			        switch(menu_choice){
-			        	case 1 : //nasi ayam
+			        	case 1 : //Nasi Tunjang
 			        	    arr_qty[0] += Cashier.olahMenu();
 				        	break;
 
-				        case 2 ://nasi
+				        case 2 ://Nasi Ayam Bakar
 				        	arr_qty[1] += Cashier.olahMenu();
 				        	break;
 
-				        case 3 : // perkedel
+				        case 3 : //Nasi Dadar
 				        	arr_qty[2] += Cashier.olahMenu();
 				        	break;
 
-				        case 4: // break
+				        case 4: //Nasi Ayam Goreng
 				            arr_qty[3] += Cashier.olahMenu();
 				        	break;
 
-				        case 5 : //nasi ayam
+				        case 5 : //Nasi Cincang
 			        	    arr_qty[4] += Cashier.olahMenu();
 				        	break;
 
-				        case 6 ://nasi
+				        case 6 ://Nasi Rendang
 				        	arr_qty[5] += Cashier.olahMenu();
 				        	break;
 
-				        case 7 : // perkedel
+				        case 7 : //Nasi Dendeng
 				        	arr_qty[6] += Cashier.olahMenu();
 				        	break;
 
-				        case 8: // break
+				        case 8: //Nasi Kakap
 				            arr_qty[7] += Cashier.olahMenu();
 				        	break;
 
-				        case 9 : //nasi ayam
+				        case 9 : //Nasi Perkedel
 			        	    arr_qty[8] += Cashier.olahMenu();
 				        	break;
 
-				        case 10 ://nasi
+				        case 10 ://Nasi Ikan Bakar
 				        	arr_qty[9] += Cashier.olahMenu();
 				        	break;
 
@@ -171,9 +171,12 @@ public class Cashier{
 			System.out.print(">> Pilih :");
 			    try{
 			        menu_choice = in.nextInt();
-			        if(menu_choice < 1 || menu_choice > 12){
+			        if(menu_choice < 1 || menu_choice > arr_menu.length){
 	 					validasi = "N";
 	 				}
+	 				if (validasi == "N") {
+					    System.out.println("   >> Inputan salah");
+					    }
 			    }
 			    catch(Exception e){
 			        validasi = "N";
@@ -205,6 +208,10 @@ public class Cashier{
 				        	}else{
 				        	    validasi = "N";
 				        	}
+				        	if (validasi == "N") {
+					            System.out.println("   >> Inputan salah");
+					        }
+
 				        }while(validasi == "N");
 
                         y += x;
