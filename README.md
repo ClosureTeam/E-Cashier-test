@@ -14,9 +14,9 @@ Cara menggunakan Program ini yaitu:
 5. Selamat menggunakan.
 
 Thanks to: 
-Ummi Azizah as Lecturer
-Achmad Hisyam
-Jodi Kurniawan
-Farhan Dasyandra Larenzo
-Mayrizka Rahmadani
-Erika Nur Afifah
+- Ummi Azizah as Lecturer
+- Achmad Hisyam
+- Jodi Kurniawan
+- Farhan Dasyandra Larenzo
+- Mayrizka Rahmadani
+- Erika Nur Afifah
