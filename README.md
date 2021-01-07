@@ -2,8 +2,8 @@
 Cashier For Padang Restaurant
 
 RPL Kelompok 13 A.K.A ClosureTeam, membuat program sederhana untuk membantu kasir-kasir di rumah makan padang.
-Kami membuat program kasir sederhana yang bertujuan untuk memudahkan mereka melakukan pemesanan dan penghitungan total pesanan.
-Dengan dibuatnya program ini masalah salah hitung pesanan akan teratasi.
+Kami membuat program kasir sederhana yang bertujuan untuk memudahkan mereka melakukan pemesanan, penghitungan total pesanan dan pencetakan struk
+Dengan dibuatnya program ini kami berharap masalah salah hitung pesanan dan penulisan nota manual yang memakan waktu akan teratasi.
 
 Program ini dibuat dengan JAVA. dan dijalankan dengan java JDK 12 atau lebih.
 Cara menggunakan Program ini yaitu:
